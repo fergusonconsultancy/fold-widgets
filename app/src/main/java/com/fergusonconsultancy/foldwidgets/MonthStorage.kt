@@ -1,5 +1,7 @@
 package com.fergusonconsultancy.foldwidgets
 
+import com.cerniera.kit.Surface
+import com.cerniera.kit.lum
 import android.content.ContentUris
 import android.content.Context
 import android.content.Intent

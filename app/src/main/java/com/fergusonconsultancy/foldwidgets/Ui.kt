@@ -1,5 +1,8 @@
 package com.fergusonconsultancy.foldwidgets
 
+import com.cerniera.kit.Finish
+import com.cerniera.kit.Ground
+import com.cerniera.kit.Surface
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
