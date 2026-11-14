@@ -1,5 +1,7 @@
 package com.fergusonconsultancy.foldwidgets
 
+import com.cerniera.kit.Finish
+import com.cerniera.kit.contrast
 import android.Manifest
 import android.app.Activity
 import android.appwidget.AppWidgetManager

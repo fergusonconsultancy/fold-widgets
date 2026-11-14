@@ -1,5 +1,8 @@
 package com.fergusonconsultancy.foldwidgets
 
+import com.cerniera.kit.Finish
+import com.cerniera.kit.Ground
+import com.cerniera.kit.Surface
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider

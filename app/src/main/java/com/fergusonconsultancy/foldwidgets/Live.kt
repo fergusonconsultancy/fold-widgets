@@ -159,14 +159,14 @@ object Live {
             best to b
         }
         // 2. Where the wallpaper is, from everything on screen that is not a Fold widget
-        val wall = Backdrop.wallpaper(c, Backdrop.Seat(0f, 0f, 1f, 1f, sw, sh))
+        val wall = Backdrop.wallpaper(c, com.cerniera.kit.Backdrop.Seat(0f, 0f, 1f, 1f, sw, sh))
         val view = wall?.let { register(it, shot, boxes) }
         var redrawn = 0
         for ((id, b) in matched) {
             var changed = false
             val reported = Widgets.reportedSize(c, id)
             val old = Backdrop.seat(c, id)
-            val seat = Backdrop.Seat(b.left.toFloat(), b.top.toFloat(), b.width().toFloat(), b.height().toFloat(), sw, sh, true, reported.width, reported.height)
+            val seat = com.cerniera.kit.Backdrop.Seat(b.left.toFloat(), b.top.toFloat(), b.width().toFloat(), b.height().toFloat(), sw, sh, true, reported.width, reported.height)
             if (old == null || !old.exact || old.screenW != sw || old.screenH != sh || Math.abs(old.left - seat.left) > 2f || Math.abs(old.top - seat.top) > 2f ||
                 Math.abs(old.width - seat.width) > 1f || Math.abs(old.height - seat.height) > 1f || Math.abs(old.repW - seat.repW) > 1.5f || Math.abs(old.repH - seat.repH) > 1.5f) {
                 Prefs.of(c).edit().putString("seat_$id", seat.encode()).apply(); changed = true
