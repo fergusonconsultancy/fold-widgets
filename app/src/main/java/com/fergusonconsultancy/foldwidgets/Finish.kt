@@ -17,7 +17,7 @@ object Prefs {
 
     fun defaultFinish(c: Context): Finish =
         runCatching { Finish.valueOf(of(c).getString("finish", Finish.VETRO.name)!!) }.getOrDefault(Finish.VETRO)
-    fun setDefaultFinish(c: Context, f: Finish) = of(c).edit().putString("finish", f.name).apply()
+    fun setDefaultFinish(c: Context, f: Finish) { of(c).edit().putString("finish", f.name).apply(); Look.changed(c) }
 
     /** A widget's own finish, or the default if it has none. */
     fun finish(c: Context, id: Int): Finish = of(c).getString("finish_$id", null)
@@ -56,5 +56,5 @@ object Prefs {
 
     /** Corner radius in dp. 24 matches Android's own widget corners. */
     fun radius(c: Context): Int = of(c).getInt("radius", 24)
-    fun setRadius(c: Context, dp: Int) = of(c).edit().putInt("radius", dp).apply()
+    fun setRadius(c: Context, dp: Int) { of(c).edit().putInt("radius", dp).apply(); Look.changed(c) }
 }

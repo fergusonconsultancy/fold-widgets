@@ -38,6 +38,8 @@ class MediaListener : android.service.notification.NotificationListenerService()
         if (which and WallpaperManager.FLAG_SYSTEM != 0) {
             Backdrop.invalidate()
             Widgets.later { Widgets.renderAll(this) }
+            // The wallpaper behind every widget changed: Nodo's too
+            Look.changed(this)
         }
     }
 

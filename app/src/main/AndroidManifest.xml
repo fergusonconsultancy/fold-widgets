@@ -19,6 +19,8 @@
     <queries>
         <!-- Samsung Weather, opened by the weather widget -->
         <package android:name="com.sec.android.daemonapp" />
+        <!-- Nodo, whose widget follows this app's look (Look.kt) -->
+        <package android:name="com.cerniera.nodo" />
         <!-- Cielo, offered as what the weather widget opens -->
         <package android:name="com.fergusonconsultancy.cielo" />
         <intent>
@@ -75,6 +77,12 @@
             android:theme="@style/Pass" />
 
         <!-- Taps that act in place: play, skip, refresh -->
+        <!-- The look (finish, corners, glass images), shared read-only with Nodo's widget -->
+        <provider
+            android:name=".LookProvider"
+            android:authorities="com.fergusonconsultancy.foldwidgets.look"
+            android:exported="true" />
+
         <receiver
             android:name=".TapReceiver"
             android:exported="false" />
